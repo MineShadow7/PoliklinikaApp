@@ -31,10 +31,10 @@ protected:
 	int pindex;
 
 public:
-	void createNewPatient(string _FIO, string _date, int _passport, int _snils, int _id, string diagnisis, string allergy) {};
+	void createNewPatient(string _FIO, string _date, int _passport, int _snils, int _id, string _diagnisis, string _allergy) {};
 	int findPatientFIO(string _FIO) { return pindex; };
 	int findPatientID(int _id) { return pindex; };
-	void editThisPatient(string _FIO, string _date, int _passport, int _snils, int _id, string diagnisis, string allergy, int index) {};
+	void editThisPatient(string _FIO, string _date, int _passport, int _snils, int _id, string _diagnisis, string _allergy, int index) {};
 	void deletePatient(int index) {};
 	string getPatientFIO(int index) { return allPatients[index].FIO; };
 	string getPatientDate(int index) { return allPatients[index].date; };
