@@ -83,6 +83,7 @@ class Patients {
 protected:
 	Patient* allPatients;
 	int patientCount;
+	int pindex;
 
 	Patients()
 	{
