@@ -75,6 +75,64 @@ void Patients::deletePatient(int index) {
 };
 
 void Patients::getPatients() {
+	{
+		setlocale(LC_ALL, "RUSSIAN");
+		string str, _FIO, _date, _diagnosis, _allergy;
+		string* data_patients = new string[7];
+		int flag1 = 1;
+		for (int j = 0; j < 7; j++)
+		{
+			data_patients[j] = " ";
+		}
+		int _id, _passport, _snils, count = 0, index = 0, flag = 0;
+		ifstream file("D:\\Y\\PoliklinikaApp\\Patients\\Patients.txt");
+		if (!file.is_open())
+		{
+			cout << "Ошибка открытия файла";
+		}
+		else
+		{
+			cout << "файл открыт";
 
+			while (!file.eof())
+			{
+				str = "";
+				getline(file, str);
+				if (flag1 == 1)
+				{
+					patientCount = stoi(str);
+					allPatients = new Patient[patientCount];
+					flag1 = 0;
+				}
+
+				if (str == "]")
+				{
+					flag = 0;
+					_id = stoi(data_patients[0]);
+					_FIO = data_patients[1];
+					_date = data_patients[2];
+					_passport = stoi(data_patients[3]);
+					_snils = stoi(data_patients[4]);
+					_diagnosis = data_patients[5];
+					_allergy = data_patients[6];
+					allPatients[patientCount].editPatient(_FIO, _date, _passport, _snils, _diagnosis, _allergy, _id);
+					cout << "\n" << _id << "\t" << _FIO << "\t" << _date << "\t" << _passport << "\t" << _snils << "\t" << _diagnosis << "\t" << _allergy;
+				}
+
+				if (flag == 1)
+				{
+					data_patients[index] = str;
+					index++;
+				}
+
+				if (str == "[")
+				{
+					flag = 1;
+					index = 0;
+				}
+			}
+		}
+		file.close();
+	}
 }
 
