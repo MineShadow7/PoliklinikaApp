@@ -2,7 +2,6 @@
 #include "PatientsClasses.h"
 #include <string>
 
-Patients patients;
 
 void MarshalString(String^ s, string& os) {
 	using namespace Runtime::InteropServices;
@@ -11,6 +10,7 @@ void MarshalString(String^ s, string& os) {
 	os = chars;
 	Marshal::FreeHGlobal(IntPtr((void*)chars));
 }
+
 
 namespace CppCLRWinformsProjekt {
 
@@ -21,9 +21,11 @@ namespace CppCLRWinformsProjekt {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
+	
 	/// <summary>
 	/// Zusammenfassung für Form1
 	/// </summary>
+	
 	public ref class Form1 : public System::Windows::Forms::Form
 	{
 	public:
@@ -33,12 +35,7 @@ namespace CppCLRWinformsProjekt {
 			//
 			//TODO: Konstruktorcode hier hinzufügen.
 			//
-			
-
-
-
 		}
-
 	protected:
 		/// <summary>
 		/// Verwendete Ressourcen bereinigen.
@@ -753,7 +750,6 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 	groupBox3->Visible = false;
-
 	string name, date, passport, snils, id, diagnosis, allergy;
 	int ipassport, isnils, iid, index;
 	index = comboBox1->SelectedIndex;

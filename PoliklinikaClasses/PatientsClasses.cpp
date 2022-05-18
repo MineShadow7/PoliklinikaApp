@@ -85,7 +85,7 @@ void Patients::getPatients() {
 			data_patients[j] = " ";
 		}
 		int _id, _passport, _snils, count = 0, index = 0, flag = 0;
-		ifstream file("D:\\Y\\PoliklinikaApp\\Patients\\Patients.txt");
+		ifstream file("C:\\Users\\shad-\\Documents\\Programming\\PoliklinikaApp\\Patients\\Patients.txt");
 		if (!file.is_open())
 		{
 			cout << "Ошибка открытия файла";

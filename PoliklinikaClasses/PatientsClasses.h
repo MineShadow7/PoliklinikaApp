@@ -31,6 +31,7 @@ protected:
 	int id;
 	string diagnisis;
 	string allergy;
+public:
 	Patient()
 	{
 		id = NULL;
@@ -73,8 +74,8 @@ protected:
 	}
 
 public:
-	void createPatient(string _FIO, string _date, int _passport, int _snils, int _id, string diagnisis, string allergy) {};
-	void editPatient(string _FIO, string _date, int _passport, int _snils, string _diagnisis, string _allergy, int _id) {};
+	void createPatient(string _FIO, string _date, int _passport, int _snils, int _id, string diagnisis, string allergy);
+	void editPatient(string _FIO, string _date, int _passport, int _snils, string _diagnisis, string _allergy, int _id);
 	
 	friend class Patients;
 };
@@ -84,19 +85,19 @@ protected:
 	Patient* allPatients;
 	int patientCount;
 	int pindex;
-
+public:
 	Patients()
 	{
 		patientCount = 0;	
 		allPatients = new Patient[1]();
+		getPatients();
 	}
 
-public:
-	void createNewPatient(string _FIO, string _date, int _passport, int _snils, int _id, string _diagnisis, string _allergy) {};
-	int findPatientFIO(string _FIO) {};
-	int findPatientID(int _id) {};
-	void editThisPatient(string _FIO, string _date, int _passport, int _snils, int _id, string _diagnisis, string _allergy, int index) {};
-	void deletePatient(int index) {};
+	void createNewPatient(string _FIO, string _date, int _passport, int _snils, int _id, string _diagnisis, string _allergy);
+	int findPatientFIO(string _FIO);
+	int findPatientID(int _id);
+	void editThisPatient(string _FIO, string _date, int _passport, int _snils, int _id, string _diagnisis, string _allergy, int index);
+	void deletePatient(int index);
 	string getPatientFIO(int index) { return allPatients[index].FIO; };
 	string getPatientDate(int index) { return allPatients[index].date; };
 	int getPatientPassport(int index) { return allPatients[index].passport; };
@@ -104,8 +105,6 @@ public:
 	int getPatientId(int index) { return allPatients[index].id; };
 	string getPatientDiagnosis(int index) { return allPatients[index].diagnisis; };
 	string getPatientAllergy(int index) { return allPatients[index].allergy; };
-private:
-	void getPatients() {
 
-	}; 
+	void getPatients(); 
 };
