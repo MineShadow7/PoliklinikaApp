@@ -64,7 +64,7 @@ void Patients::deletePatient(int index) {
 			_allPatients[i] = allPatients[i + 1];
 		}
 		else {
-			allPatients[i] = allPatients[i];
+			_allPatients[i] = allPatients[i];
 		}
 	}
 	delete[] allPatients;
